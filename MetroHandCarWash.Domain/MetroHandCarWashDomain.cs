@@ -16,8 +16,9 @@ namespace MetroHandCarWash.Domain
             _commandBus = commandBus;
         }
 
-        public async Task<RegisterNewClientResult> RegisterNewClient(RegisterNewClientInput newClientInput)
+        public async Task<RegisterNewClientResult> RegisterNewClient(string lastName, string firstName, string password, string email, string mobile, DateTime creationDate, DateTime modifyDate)
         {
+            RegisterNewClientInput newClientInput = new RegisterNewClientInput() { LastName = lastName, FirstName = firstName, Password = password, Email = email, Mobile = mobile, CreationDate = creationDate, ModifiedDate = modifyDate };
             return await _commandBus.ExecuteAsync<RegisterNewClientInput, RegisterNewClientResult>(newClientInput);
         }
     }

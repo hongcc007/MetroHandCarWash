@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace MetroHandCarWash.Domain.Domain.Input
+namespace MetroHandCarWash.API.Model
 {
-    public class RegisterNewClientInput
+    public class RegisterNewClientReq
     {
         public string LastName { get; set; }
         public string FirstName { get; set; }
