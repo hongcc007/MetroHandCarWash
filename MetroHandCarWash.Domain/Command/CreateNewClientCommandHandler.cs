@@ -25,5 +25,14 @@ namespace MetroHandCarWash.Domain.Command
 
             return null;
         }
+
+        public Task<RegisterNewClientResult> UpdateClient(RegisterNewClientInput context)
+        {
+            _metroHandCarWashContext.Update<RegisterNewClientInput>(context);
+            _metroHandCarWashContext.SaveChanges();
+            return null;
+        }
+
+
     }
 }
